@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package>
+  <name>tams_ur5</name>
+  <version>0.0.0</version>
+  <description>The tams_ur5 package</description>
+  
+  <maintainer email="goerner@informatik.uni-hamburg.de">Michael Goerner</maintainer>
+  <author email="5jonetzk@informatik.uni-hamburg.de">Yannick Jonetzko</author>
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <export>
+    <metapackage/>
+  </export>
+</package>
