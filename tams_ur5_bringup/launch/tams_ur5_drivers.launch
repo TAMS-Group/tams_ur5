@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- Parameters of the ur5 driver -->
+  <arg name="arm_ip" default="192.168.1.12"/>
+  <arg name="reverse_port" default="50001"/>
+  <arg name="min_payload"  default="0.0"/>
+  <arg name="max_payload"  default="10.0"/>
+
+  <arg name="hand_ip" default="192.168.1.11"/>
+  
+  <!-- ur common -->
+  <include file="$(find ur_bringup)/launch/ur_common.launch">
+    <arg name="robot_ip" value="$(arg arm_ip)"/>
+    <arg name="reverse_port" value="$(arg reverse_port)"/>
+    <arg name="min_payload"  value="$(arg min_payload)"/>
+    <arg name="max_payload"  value="$(arg max_payload)"/>
+  </include>
+
+  <!-- Gripper -->
+  <node name="robotiqSModel" pkg="robotiq_s_model_control" type="SModelTcpNode.py" args="$(arg hand_ip)"/>
+  <node name="sModelStatePublisher" pkg="robotiq_s_mode_joint_state_publisher" type="robotiq_s_mode_joint_state_publisher.py"/>
+
+
+  <!-- Force Torque 150, not yet integrated -->
+  <!--  <node name="forceTorque" pkg="robotiq_force_torque_sensor" type="rq_sensor"/> -->
+
+
+</launch>

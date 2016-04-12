@@ -2,7 +2,7 @@
 <package>
   <name>tams_ur5_bringup</name>
   <version>0.0.0</version>
-  <description>The tams_ur5_bringup package</description>
+  <description>Launch files for TAMS' UR5 setup </description>
 
   <maintainer email="goerner@informatik.uni-hamburg.de">Michael Goerner</maintainer>
   <author email="5jonetzk@informatik.uni-hamburg.de">Yannick Jonetzko</author>
