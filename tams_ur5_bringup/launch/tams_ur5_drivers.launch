@@ -19,7 +19,7 @@
 
   <!-- Gripper -->
   <node name="robotiqSModel" pkg="robotiq_s_model_control" type="SModelTcpNode.py" args="$(arg hand_ip)"/>
-  <node name="sModelStatePublisher" pkg="robotiq_s_mode_joint_state_publisher" type="robotiq_s_mode_joint_state_publisher.py"/>
+  <node name="sModelStatePublisher" pkg="robotiq_s_model_joint_state_publisher" type="robotiq_s_model_joint_state_publisher.py"/>
 
 
   <!-- Force Torque 150, not yet integrated -->
