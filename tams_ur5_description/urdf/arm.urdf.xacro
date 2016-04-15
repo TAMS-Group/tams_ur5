@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"
        name="arm" > 
+  <xacro:property name="pi" value="3.1415926535897931" />
   <!-- include macro definitions -->
   <xacro:include filename="$(find ur_description)/urdf/gazebo.urdf.xacro" />
   <xacro:include filename="$(find ur_description)/urdf/ur5.urdf.xacro" />
@@ -13,7 +14,7 @@
   <xacro:ur5_robot prefix="" joint_limited="true"/>
 
   <xacro:robotiq_fts150 prefix="ft_" parent="ee_link">    
-    <origin xyz="0.0 0.0 0.012" rpy="0.0 1.571 0.0" />
+    <origin xyz="0.0 0.0 0.012" rpy="0.0 ${pi/2} 0.0" />
   </xacro:robotiq_fts150>
 
   <!-- the adaptive gripper -->
@@ -21,6 +22,6 @@
   <joint name="gripper_joint" type="fixed">
     <parent link="ft_fts_toolside" />
     <child link = "palm" />
-    <origin xyz="0.0 0.0 0.06" rpy="1.57079632679 0.0 1.570797" />
+    <origin xyz="0.0 0.0 0.06" rpy="${pi/2} 0.0 ${pi/2}" />
   </joint>
 </robot>
