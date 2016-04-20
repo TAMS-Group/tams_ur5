@@ -2,8 +2,8 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"
        name="arm" > 
   <xacro:property name="pi" value="3.1415926535897931" />
+
   <!-- include macro definitions -->
-  <xacro:include filename="$(find ur_description)/urdf/gazebo.urdf.xacro" />
   <xacro:include filename="$(find ur_description)/urdf/ur5.urdf.xacro" />
   <xacro:include filename="$(find robotiq_s_model_visualization)/cfg/s-model_articulated_macro.xacro" />
 	
