@@ -11,6 +11,7 @@
   <buildtool_depend>catkin</buildtool_depend>
   <run_depend>tams_ur5_bringup</run_depend>
   <run_depend>tams_ur5_description</run_depend>
+  <run_depend>robotiq_s_model_action_server</run_depend>
 
   <export>
     <metapackage/>
