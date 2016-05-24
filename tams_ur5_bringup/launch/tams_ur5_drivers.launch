@@ -19,7 +19,7 @@
 
   <!-- Gripper -->
   <node name="robotiqSModel" pkg="robotiq_s_model_control" type="SModelTcpNode.py" args="$(arg hand_ip)"/>
-  <node name="sModelStatePublisher" args="''" pkg="robotiq_joint_state_publisher" type="s_model_joint_states"/>
+  <node name="sModelStatePublisher" pkg="robotiq_joint_state_publisher" type="s_model_joint_states"/>
   
   <!-- Gripper action server-->
   <include file="$(find robotiq_s_model_action_server)/launch/robotiq_s_model_action_server.launch"/>
