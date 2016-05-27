@@ -18,10 +18,10 @@
   </xacro:robotiq_fts150>
 
   <!-- the adaptive gripper -->
-  <xacro:s-model_articulated prefix=""/>
+  <xacro:s-model_articulated prefix="s_model_"/>
   <joint name="gripper_joint" type="fixed">
     <parent link="ft_fts_toolside" />
-    <child link = "palm" />
+    <child link = "s_model_palm" />
     <origin xyz="0.0 0.0 0.06" rpy="${pi/2} 0.0 ${pi/2}" />
   </joint>
 </robot>
