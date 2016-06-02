@@ -14,7 +14,7 @@
   <xacro:ur5_robot prefix="" joint_limited="true"/>
 
   <xacro:robotiq_fts150 prefix="ft_" parent="ee_link">    
-    <origin xyz="0.0 0.0 0.012" rpy="0.0 ${pi/2} 0.0" />
+    <origin xyz="0.009 0.0 0.0" rpy="0.0 ${-pi/2} ${pi}" />
   </xacro:robotiq_fts150>
 
   <!-- the adaptive gripper -->
@@ -22,6 +22,6 @@
   <joint name="gripper_joint" type="fixed">
     <parent link="ft_fts_toolside" />
     <child link = "s_model_palm" />
-    <origin xyz="0.0 0.0 0.06" rpy="${pi/2} 0.0 ${pi/2}" />
+    <origin xyz="0.0 0.0 0.06" rpy="${pi/2} 0.0 ${-pi/2}" />
   </joint>
 </robot>
