@@ -6,22 +6,38 @@
   <!-- include macro definitions -->
   <xacro:include filename="$(find ur_description)/urdf/ur5.urdf.xacro" />
   <xacro:include filename="$(find robotiq_s_model_visualization)/cfg/s-model_articulated_macro.xacro" />
-	
-  <!-- ft150 -->
   <xacro:include filename="$(find robotiq_force_torque_sensor)/urdf/robotiq_fts150.urdf.xacro" />
+  <xacro:include filename="$(find tams_ur5_description)/urdf/ft_adapter.urdf.xacro" />
+  <xacro:include filename="$(find tams_ur5_description)/urdf/s_model_adapter.urdf.xacro" />
 
   <!-- arm -->
   <xacro:ur5_robot prefix="" joint_limited="true"/>
 
+  <!-- ft_adapter -->
+  <joint name="ft_adapter" type="fixed">
+    <parent link="ee_link" />
+    <child link = "ft_adapter" />
+    <origin xyz="0.0045 0.0 0.0" rpy="0.0 ${pi/2} 0.0" />
+  </joint>
+  <xacro:ft_adapter name="ft_adapter" parent="ee_link">
+    <origin xyz="0.0045 0.0 0.0" rpy="0.0 ${pi/2} 0.0" />
+  </xacro:ft_adapter>
+
+  <!-- ft150 -->
   <xacro:robotiq_fts150 prefix="ft_" parent="ee_link">    
     <origin xyz="0.009 0.0 0.0" rpy="0.0 ${-pi/2} ${pi}" />
   </xacro:robotiq_fts150>
+
+  <!-- s_model_adapter -->
+  <xacro:s_model_adapter name="s_model_adapter" parent="ft_fts_toolside">
+    <origin xyz="0.0 0.0 0.0065" rpy="0.0 0.0 0.0" />
+  </xacro:s_model_adapter>
 
   <!-- the adaptive gripper -->
   <xacro:s-model_articulated prefix="s_model_"/>
   <joint name="gripper_joint" type="fixed">
     <parent link="ft_fts_toolside" />
     <child link = "s_model_palm" />
-    <origin xyz="0.0 0.0 0.06" rpy="${pi/2} 0.0 ${-pi/2}" />
+    <origin xyz="0.0 0.0 0.057" rpy="${pi/2} 0.0 ${-pi/2}" />
   </joint>
 </robot>
