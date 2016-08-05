@@ -9,7 +9,7 @@
   <arg name="hand_ip" default="192.168.1.11"/>
   
   <!-- ur5 -->
-  <include file="$(find ur_bringup)/launch/ur_common.launch">
+  <include file="$(find ur_modern_driver)/launch/ur_common.launch">
     <arg name="robot_ip" value="$(arg arm_ip)"/>
     <arg name="min_payload" value="$(arg min_payload)"/>
     <arg name="max_payload" value="$(arg max_payload)"/>
