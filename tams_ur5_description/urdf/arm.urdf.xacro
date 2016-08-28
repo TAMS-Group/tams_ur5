@@ -15,11 +15,6 @@
   <xacro:ur5_robot prefix="ur5_" joint_limited="true"/>
 
   <!-- ft_adapter -->
-  <joint name="ft_adapter" type="fixed">
-    <parent link="ur5_ee_link" />
-    <child link = "ft_adapter" />
-    <origin xyz="0.0045 0.0 0.0" rpy="0.0 ${pi/2} 0.0" />
-  </joint>
   <xacro:ft_adapter name="ft_adapter" parent="ur5_ee_link">
     <origin xyz="0.0045 0.0 0.0" rpy="0.0 ${pi/2} 0.0" />
   </xacro:ft_adapter>
