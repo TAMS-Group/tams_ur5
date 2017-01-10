@@ -11,10 +11,16 @@ To bring up the robot description and the necessary drivers run:
 
 ```roslaunch tams_u5_bringup tams_ur5.launch```
 
-Running the drivers seperately use:
+Running the drivers separately use:
 
 ```roslaunch tams_ur5_bringup tams_ur5_drivers.launch```
 
-Uplouding the robot description seperately use:
+Uploading the robot description separately use:
 
 ```roslaunch tams_ur5_description tams_ur5_upload.launch```
+
+---
+
+__Usage in tams_ur5_setup__
+
+This repo is used by [tams_ur5_setup](https://github.com/TAMS-Group/tams_ur5_setup) to embed the arm in the corner of the tams lab for the full tams setup.
