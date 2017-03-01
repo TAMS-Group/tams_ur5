@@ -8,6 +8,8 @@
 
   <arg name="hand_ip" default="192.168.1.11"/>
   
+  <arg name="gripper_mode" default="basic"/>
+
   <!-- ur5 -->
   <include file="$(find ur_modern_driver)/launch/ur_common.launch">
     <arg name="robot_ip" value="$(arg arm_ip)"/>
@@ -22,7 +24,9 @@
     <param name="prefix" value="s_model_" />
   </node>
   <!-- Gripper action server-->
-  <include file="$(find robotiq_s_model_action_server)/launch/robotiq_s_model_action_server.launch"/>
+  <include file="$(find robotiq_s_model_action_server)/launch/robotiq_s_model_action_server.launch">
+    <arg name="gripper_mode" value="$(arg gripper_mode)"/>
+  </include>
 
 
   <!-- Force Torque 150, not yet integrated -->
