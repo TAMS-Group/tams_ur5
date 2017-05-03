@@ -12,7 +12,9 @@
   <xacro:include filename="$(find tams_ur5_description)/urdf/plug_collision_model.urdf.xacro" />
 
   <!-- arm -->
-  <xacro:ur5_robot prefix="ur5_" joint_limited="true"/>
+  <!-- xamla_cap is a custom parameter in TAMS' fork of the universal_robot repository,
+       remove it if you want to use the upstream ur5 description instead -->
+  <xacro:ur5_robot prefix="ur5_" joint_limited="true" xamla_cap="true"/>
 
   <!-- ft_adapter -->
   <xacro:ft_adapter name="ft_adapter" parent="ur5_ee_link">
