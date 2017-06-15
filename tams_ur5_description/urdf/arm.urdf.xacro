@@ -36,7 +36,7 @@
 
   <!-- s_model_adapter -->
   <xacro:s_model_adapter name="s_model_adapter" parent="ft_fts_toolside">
-    <origin xyz="0.0 0.0 0.0065" rpy="0.0 0.0 0.0" />
+    <origin xyz="0.0 0.0 0.015" rpy="0.0 0.0 0.0" />
   </xacro:s_model_adapter>
 
   <!-- the adaptive gripper -->
@@ -44,7 +44,7 @@
   <joint name="gripper_joint" type="fixed">
     <parent link="tool0" />
     <child link = "s_model_palm" />
-    <origin xyz="0.057 0.0 0.0" rpy="0.0 0.0 ${-pi/2}" />
+    <origin xyz="0.0775 0.0 0.0" rpy="0.0 0.0 ${-pi/2}" />
   </joint>
 
   <!-- plug collision model -->

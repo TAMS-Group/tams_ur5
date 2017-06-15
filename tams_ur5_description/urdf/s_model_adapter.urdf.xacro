@@ -15,7 +15,16 @@
       <visual>
         <origin xyz="0.0 0 0.0" rpy="0 0 0.0" />
         <geometry>
-          <cylinder length="0.013" radius="0.04"/>
+ 	  <cylinder length="0.035" radius="0.06"/>
+        </geometry>
+        <material name="gray">
+          <color rgba="0.2 0.2 0.2 1"/>
+        </material>
+      </visual>
+      <visual>
+        <origin xyz="0.0725 0 0" rpy="0 0 0.0" />
+        <geometry>
+	  <box size="0.035 0.035 0.035"/>
         </geometry>
         <material name="gray">
           <color rgba="0.2 0.2 0.2 1"/>
@@ -24,7 +33,7 @@
       <collision>
         <origin xyz="0.0 0 0.0" rpy="0 0 0.0" />
         <geometry>
-          <cylinder length="0.013" radius="0.04"/>
+          <cylinder length="0.035" radius="0.06"/>
         </geometry>
       </collision>
     </link>
