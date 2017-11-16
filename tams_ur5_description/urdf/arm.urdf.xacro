@@ -4,7 +4,7 @@
   <xacro:property name="pi" value="3.1415926535897931" />
 
   <!-- include macro definitions -->
-  <xacro:include filename="$(find ur_description)/urdf/ur5.urdf.xacro" />
+  <xacro:include filename="$(find tams_ur5_description)/urdf/ur5.urdf.xacro" />
   <xacro:include filename="$(find robotiq_s_model_visualization)/cfg/s-model_articulated_macro.xacro" />
   <xacro:include filename="$(find robotiq_force_torque_sensor)/urdf/robotiq_fts150.urdf.xacro" />
   <xacro:include filename="$(find tams_ur5_description)/urdf/ft_adapter.urdf.xacro" />
@@ -14,7 +14,7 @@
   <!-- arm -->
   <!-- xamla_cap is a custom parameter in TAMS' fork of the universal_robot repository,
        remove it if you want to use the upstream ur5 description instead -->
-  <xacro:ur5_robot prefix="ur5_" joint_limited="true" xamla_cap="true"/>
+  <xacro:ur5_robot prefix="ur5_" joint_limited="false" xamla_cap="true"/>
 
   <!-- ft_adapter -->
   <xacro:ft_adapter name="ft_adapter" parent="ur5_ee_link">
