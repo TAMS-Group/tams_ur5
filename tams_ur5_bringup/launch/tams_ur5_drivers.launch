@@ -29,9 +29,10 @@
     <arg name="gripper_mode" value="$(arg gripper_mode)"/>
   </include>
 
-
-  <!-- Force Torque 150, not yet integrated -->
-  <!--  <node name="forceTorque" pkg="robotiq_force_torque_sensor" type="rq_sensor"/> -->
-
+  <!-- Force Torque 150 -->
+  <node name="forceTorque" pkg="robotiq_force_torque_sensor" type="rq_sensor">
+    <param name="frame_id" value="ft_robotiq_force_torque_frame_id"/>
+    <param name="interface" value="rfcomm1"/>
+  </node>
 
 </launch>
