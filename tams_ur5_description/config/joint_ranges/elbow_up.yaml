@@ -9,7 +9,7 @@ shoulder_lift_joint:
     lower: -4.7123890
     upper: -1.570796
 elbow_joint: 
-    lower: -1.570796
+    lower: -3.1415926
     upper: 0.0
 wrist_1_joint:
     lower: -6.2831853
