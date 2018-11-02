@@ -8,8 +8,8 @@
 
   <!-- include macro definitions -->
   <xacro:include filename="$(find tams_ur5_description)/urdf/ur5.urdf.xacro" />
-  <xacro:include filename="$(find robotiq_s_model_visualization)/cfg/s-model_articulated_macro.xacro" />
-  <xacro:include filename="$(find robotiq_force_torque_sensor)/urdf/robotiq_fts150.urdf.xacro" />
+  <xacro:include filename="$(find robotiq_3f_gripper_visualization)/cfg/robotiq-3f-gripper_articulated_macro.xacro"  prefix="s_model_"/>
+  <xacro:include filename="$(find robotiq_ft_sensor)/urdf/robotiq_fts150.urdf.xacro" />
   <xacro:include filename="$(find tams_ur5_description)/urdf/ft_adapter.urdf.xacro" />
   <xacro:include filename="$(find tams_ur5_description)/urdf/s_model_adapter.urdf.xacro" />
   <xacro:include filename="$(find tams_ur5_description)/urdf/plug_collision_model.urdf.xacro" />
@@ -51,7 +51,7 @@
   </xacro:s_model_adapter>
 
   <!-- the adaptive gripper -->
-  <xacro:s-model_articulated prefix="s_model_"/>
+  <xacro:robotiq-3f-gripper_articulated prefix="s_model_"/>
   <joint name="gripper_joint" type="fixed">
     <parent link="tool0" />
     <child link = "s_model_palm" />
