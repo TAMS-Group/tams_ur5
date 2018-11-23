@@ -11,7 +11,7 @@ shoulder_pan_joint:
     upper: 1.570796    
 shoulder_lift_joint:
     lower: -4.7123890
-    upper: -1.570796
+    upper: -1.1606440
 elbow_joint: 
     lower: -3.1415926
     upper: 0.0
