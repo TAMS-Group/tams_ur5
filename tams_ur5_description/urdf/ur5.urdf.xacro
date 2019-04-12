@@ -90,7 +90,9 @@
     More information on the cap and the 3D-printable models can be found at:
     https://github.com/Xamla/xamla_egomo/tree/master/egomo_3d_printed_parts/egomo-1
   -->
-  <xacro:macro name="ur5_robot" params="prefix joint_limited xamla_cap:=false">
+  <xacro:macro name="ur5_robot" params="prefix joint_limited
+    xamla_cap:=false
+    transmission_hw_interface:=hardware_interface/PositionJointInterface">
 
     <link name="${prefix}base_link" >
       <visual>
@@ -334,7 +336,7 @@
       </collision>
     </link>
 
-    <xacro:ur_arm_transmission prefix="${prefix}" />
+    <xacro:ur_arm_transmission prefix="${prefix}" hw_interface="${transmission_hw_interface}" />
     <xacro:ur_arm_gazebo prefix="${prefix}" />
 
     <!-- ROS base_link to UR 'Base' Coordinates transform -->
