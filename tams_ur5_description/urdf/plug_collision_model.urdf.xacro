@@ -21,7 +21,7 @@
       </collision>
     </link>
     <joint name="${name}_link_1_joint" type="fixed">
-      <insert_block name="origin" />
+      <xacro:insert_block name="origin" />
       <child link="${name}_link_1" />
       <parent link="${parent}"/>
     </joint>
@@ -44,7 +44,7 @@
       </collision>
     </link>
     <joint name="${name}_link_2_joint" type="fixed">
-      <insert_block name="origin" />
+      <xacro:insert_block name="origin" />
       <child link="${name}_link_2" />
       <parent link="${parent}"/>
     </joint>
