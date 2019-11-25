@@ -29,7 +29,7 @@
       </collision>
     </link>
 <joint name="mounted_holder_joint" type="fixed">
-       <insert_block name="origin" />
+       <xacro:insert_block name="origin" />
       <child link="mounted_holder" />
       <parent link="${parent}"/>
     </joint>
