@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- Parameters of the ur5 driver -->
+  <arg name="arm_ip" default="192.168.1.12"/>
+  <arg name="min_payload" default="0.0"/>
+  <arg name="max_payload" default="10.0"/>
+
+  <arg name="hand_ip" default="192.168.1.11"/>
+  
+  <arg name="gripper_start_mode" default="basic"/>
+
+  <!-- ur5 -->
+  <include file="$(find tams_ur5_bringup)/launch/ur5_ros_control.launch">
+     <arg name="robot_ip" value="$(arg arm_ip)"/>
+  </include>
+
+  <!-- Gripper -->
+<!--  <node name="robotiqSModel" pkg="robotiq_s_model_control" type="SModelTcpNode.py" args="$(arg hand_ip)"/>-->
+  <node name="robotiq3fGripper" pkg="robotiq_3f_gripper_control" type="Robotiq3FGripperRtuNode.py" args="/dev/rfcomm2"/>
+  <node name="robotiq3fGripperStatePublisher" pkg="robotiq_3f_gripper_joint_state_publisher" type="robotiq_3f_gripper_joint_states">
+    <param name="prefix" value="s_model_" />
+  </node>
+  <!-- Gripper action server-->
+  <include file="$(find robotiq_s_model_action_server)/launch/robotiq_s_model_action_server.launch">
+    <arg name="gripper_start_mode" value="$(arg gripper_start_mode)"/>
+  </include>
+
+  <!-- Force Torque 150 -->
+  <node name="forceTorque" pkg="robotiq_ft_sensor" type="rq_sensor">
+    <param name="frame_id" value="ft_robotiq_force_torque_frame_id"/>
+    <param name="serial_id" value="rfcomm1"/>
+  </node>
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" />
+</launch>
