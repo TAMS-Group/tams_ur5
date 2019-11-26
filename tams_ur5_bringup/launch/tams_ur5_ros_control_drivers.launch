@@ -13,6 +13,7 @@
   <!-- ur5 -->
   <include file="$(find tams_ur5_bringup)/launch/ur5_ros_control.launch">
      <arg name="robot_ip" value="$(arg arm_ip)"/>
+     <arg name="prefix" value="ur5_"/>
   </include>
 
   <!-- Gripper -->
