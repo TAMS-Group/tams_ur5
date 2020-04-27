@@ -4,8 +4,6 @@
 
   <xacro:arg name="r200" default="true" />
 
-  <xacro:property name="pi" value="3.1415926535897931" />
-
   <!-- include macro definitions -->
   <xacro:include filename="$(find tams_ur5_description)/urdf/ur5.urdf.xacro" />
   <xacro:include filename="$(find robotiq_3f_gripper_visualization)/cfg/robotiq-3f-gripper_articulated_macro.xacro"/>
