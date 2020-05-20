@@ -18,6 +18,9 @@
     <arg name="min_payload" value="$(arg min_payload)"/>
     <arg name="max_payload" value="$(arg max_payload)"/>
     <arg name="prefix" value="ur5_"/>
+    <!-- Hand-tuned values to achieve position accuracy <1mm when moving above the table - v4hn@20200520 -->
+    <arg name="servoj_gain" value="300." />
+    <arg name="servoj_lookahead_time" value="0.075" />
   </include>
 
   <!-- Gripper -->
