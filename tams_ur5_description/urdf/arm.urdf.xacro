@@ -2,7 +2,7 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"
        name="arm" > 
 
-  <xacro:arg name="r200" default="true" />
+  <xacro:arg name="r200" default="false" />
 
   <!-- include macro definitions -->
   <xacro:include filename="$(find tams_ur5_description)/urdf/ur5.urdf.xacro" />
