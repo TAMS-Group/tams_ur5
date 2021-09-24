@@ -1,6 +1,9 @@
 tams_ur5
 ======
 
+**Note: This package is deprecated, use https://github.com/TAMS-Group/tams_ur5_setup directly**
+---
+
 This repository combines the ur5 arm with the robotiq s model gripper and the fts150 force torque sensor(not yet integrated).
 
 ---
